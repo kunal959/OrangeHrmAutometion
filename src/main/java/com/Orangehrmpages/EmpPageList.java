@@ -30,6 +30,10 @@ public class EmpPageList extends BaseClass{
 			driver.findElement(By.id("re_password")).sendKeys(password);
 		}
 		driver.findElement(By.id("btnSave")).click();
+//		if(firstname.isEmpty()||lastname.isEmpty()||username.isEmpty()||password.isEmpty()) {
+//			System.out.println("error message is display");
+//		}
+//		else {System.out.println("user is successfully crated");}
 		WebElement searchResult=driver.findElement(By.xpath("//ol[@class='fieldsInLine']/descendant::input[1]"));
 		Util.validation(searchResult.getAttribute("value"),firstname);
 //		public static void validation()
