@@ -1,4 +1,4 @@
-package com.OrangeHRM;
+package com.practice;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -8,6 +8,8 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+
+import com.OrangeHRM.BaseClass;
 
 public class Assignment1 extends BaseClass{
 

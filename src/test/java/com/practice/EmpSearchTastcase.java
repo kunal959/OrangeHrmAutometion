@@ -1,6 +1,8 @@
-package com.OrangeHRM;
+package com.practice;
 
 import org.openqa.selenium.By;
+
+import com.OrangeHRM.BaseClass;
 
 public class EmpSearchTastcase extends BaseClass{
 

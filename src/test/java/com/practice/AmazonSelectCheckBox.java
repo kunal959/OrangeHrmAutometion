@@ -1,10 +1,12 @@
-package com.OrangeHRM;
+package com.practice;
 
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import com.OrangeHRM.BaseClass;
 
 public class AmazonSelectCheckBox extends BaseClass{
 

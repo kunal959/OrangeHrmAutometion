@@ -1,9 +1,12 @@
-package com.OrangeHRM;
+package com.practice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.OrangeHRM.BaseClass;
+import com.OrangeHRM.Util;
 
 public class LoginTestcase extends BaseClass {
 
@@ -25,6 +28,7 @@ public class LoginTestcase extends BaseClass {
 		driver.findElement(By.id("txtPassword")).sendKeys(password);
 
 		driver.findElement(By.id("btnLogin")).click();
+		
 	}
 
 	public static void clean() {
@@ -37,7 +41,7 @@ public class LoginTestcase extends BaseClass {
 		try {
 			if (driver.findElement(By.id("spanMessage")).isDisplayed()) {
 				String errorMessage = driver.findElement(By.id("spanMessage")).getText();
-				verifyLogin(errorMessage);
+				//verifyLogin(errorMessage);
 				System.out.println(errorMessage);
 			}
 		} catch (Exception e) {

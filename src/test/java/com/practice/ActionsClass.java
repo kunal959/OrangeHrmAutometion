@@ -1,4 +1,4 @@
-package com.OrangeHRM;
+package com.practice;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -6,10 +6,14 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
-public class RobotClass extends BaseClass{
+import com.OrangeHRM.BaseClass;
+import com.OrangeHRM.Util;
 
-	public static void main(String[] args) throws AWTException {
+public class ActionsClass extends BaseClass {
+
+	public static void main(String[] args)  {
 		launchBrowser("chrome");
 		driver.navigate().to("https://realestateautomation.agilecrm.com/login#contacts");
 		driver.findElement(By.xpath("//input[@type='email']")).sendKeys("automation@yopmail.com");
@@ -21,13 +25,12 @@ public class RobotClass extends BaseClass{
 		WebElement deal=driver.findElement(By.id("4772450216247296"));
 		WebElement prospect=driver.findElement(By.id("Prospect-list-container"));
 		
-		Robot robot=new Robot();
-		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-		robot.keyPress(KeyEvent.VK_PAGE_DOWN);
-		robot.keyRelease(KeyEvent.VK_PAGE_DOWN);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
+		Actions act = new Actions(driver);
+		//act.dragAndDrop(deal, prospect).build().perform();
+		act.clickAndHold(deal).release(prospect).build().perform();
+		
+		act.doubleClick(prospect);
+		
 
 	}
 
