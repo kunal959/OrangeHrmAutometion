@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import com.OrangeHRM.BaseClass;
 import com.OrangeHRM.PropertyHandling;
 import com.Orangehrmpages.LoginPage;
-import com.practice.LoginTestcase;
 
 public class LoginTestCase extends BaseClass{
 	PropertyHandling prop;
@@ -19,9 +18,14 @@ public class LoginTestCase extends BaseClass{
 	String password;
 	@BeforeClass
 	@Parameters({"browser"})
-	public void beforeClass(String browser) throws IOException {
+	public void beforeClass(String browser) {
 		String configFilePath=System.getProperty("user.dir")+"/config.properties";
-		 prop=new PropertyHandling(configFilePath);
+		 try {
+			prop=new PropertyHandling(configFilePath);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		launchBrowser(browser);
 		 username = prop.getProperty("orangeHrmUsername");
 		 password = prop.getProperty("orangeHrmPassword");
