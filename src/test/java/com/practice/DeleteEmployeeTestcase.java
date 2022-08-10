@@ -7,18 +7,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import com.OrangeHRM.BaseClass;
+import com.Orangehrmpages.LoginPage;
 
 public class DeleteEmployeeTestcase extends BaseClass
 {
 
 	public static void main(String[] args) {
+		LoginPage loginPage = new LoginPage();
 		DeleteEmployeeTestcase obj = new DeleteEmployeeTestcase();
-		obj.launchBrowser("chrome");
+		launchBrowser("chrome");
 		//obj.launchBrowser("mozilla");
 		//obj.launchBrowser("edge");
 		
 		driver.navigate().to("https://opensource-demo.orangehrmlive.com/index.php/auth/login");
-		LoginTestcase.logIn("Admin","admin123");
+		loginPage.logIn("Admin","admin123");
 		
 		driver.findElement(By.id("menu_pim_viewPimModule")).click();
 		

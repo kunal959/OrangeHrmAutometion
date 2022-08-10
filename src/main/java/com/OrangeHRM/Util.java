@@ -24,8 +24,8 @@ public class Util extends BaseClass
 	{
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 		.withTimeout(Duration.ofSeconds(10))
-		.pollingEvery(Duration.ofSeconds(2));
-//		.ignoring(Exception.class);
+		.pollingEvery(Duration.ofSeconds(2))
+		.ignoring(Exception.class);
 		
 		wait.until(new Function<WebDriver, WebElement>()		
 		{

@@ -3,15 +3,15 @@ package com.practice;
 import java.util.Map;
 
 import com.OrangeHRM.BaseClass;
-import com.OrangeHRM.LoginPage;
 import com.Orangehrmpages.EmpPageList;
+import com.Orangehrmpages.LoginPage;
 
 public class AddEmpTestcase extends BaseClass{
 
 	public static void main(String[] args) throws Exception {
 		Map<String,Object> empDetails;
 		launchBrowser("chrome");
-		driver.navigate().to("https://opensource-demo.orangehrmlive.com/");
+		driver.navigate().to("https://opensource-demo.orangehrmlive.com");
 	
 		LoginPage loginPage = new LoginPage();
 		EmpPageList empPageList = new EmpPageList();
@@ -22,8 +22,6 @@ public class AddEmpTestcase extends BaseClass{
 
 		empDetails=empPageList.addEmp("cyber","", false, "", "");
 
-		empDetails=empPageList.addEmp("kunal","sonawane", true, "kunal@123","kunal123");
-
 		empDetails=empPageList.addEmp("","sonawane", true, "kunal@123","kunal123");
 
 		empDetails=empPageList.addEmp("kunal","", true, "kunal@123","kunal123");
@@ -33,6 +31,8 @@ public class AddEmpTestcase extends BaseClass{
 		empDetails=empPageList.addEmp("kunal","sonawane", true, "kunal@123","");
 		
 		empDetails=empPageList.addEmp("","", true, "","");
+		
+		empDetails=empPageList.addEmp("kunal","sonawane", true, "kunal@123","kunal123");
 
 		
 		empPageList.searchEmpById(empDetails);
