@@ -2,10 +2,7 @@ package com.orangehrm;
 
 import java.io.IOException;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import com.OrangeHRM.BaseClass;
 import com.OrangeHRM.PropertyHandling;
