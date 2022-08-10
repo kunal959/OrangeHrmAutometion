@@ -3,14 +3,16 @@ package com.practice;
 import org.openqa.selenium.By;
 
 import com.OrangeHRM.BaseClass;
+import com.Orangehrmpages.LoginPage;
 
 public class EmpSearchTastcase extends BaseClass{
 
 	public static void main(String[] args) {
+		LoginPage loginPage = new LoginPage();
 		EmpSearchTastcase obj = new EmpSearchTastcase();
-		obj.launchBrowser("chrome");
+		launchBrowser("chrome");
 		driver.navigate().to("https://opensource-demo.orangehrmlive.com/index.php/auth/login");
-		LoginTestcase.logIn("Admin","admin123");
+		loginPage.logIn("Admin","admin123");
 		driver.findElement(By.id("menu_pim_viewPimModule")).click();
 		
 		//search employee by name
